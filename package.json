@@ -18,5 +18,7 @@
     "url": "https://github.com/awssimplified/RESTApiNodeJS/issues"
   },
   "homepage": "https://github.com/awssimplified/RESTApiNodeJS#readme",
-  "description": ""
+  "description": "This programming test requires you to write a program in any language, using any support library. The only restriction is that it CANNOT use any online services during its runtime.",
+  "devDependencies": {},
+  "keywords": []
 }
