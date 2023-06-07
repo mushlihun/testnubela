@@ -26,6 +26,7 @@ app.use(express.urlencoded({
 app.post('/bar', function(req, res) {
   var bodys = req.body;
   var id = bodys.id;
+  delete bodys['method'];
   var params =  bodys.params;
   var body = {
     id: ++id,
