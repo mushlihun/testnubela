@@ -1,9 +1,7 @@
 const express= require('express')
-var mustacheExpress = require('mustache-express')
 const app = express()
-
 const port = 3000;
-var insults = ['{"id":42,"method":"echo","params":{"message":"Hello"}}'];
+var mustacheExpress = require('mustache-express')
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 });
@@ -18,20 +16,20 @@ app.get('/', function (req, res) {
 app.get('/foo', function (req, res) {
     res.json({"foo": "bar"});
 });
-/*
+
 app.use(express.urlencoded({
   extended: true
 }));
-*/
+
 app.post('/bar', function(req, res) {
   var bodys = req.body;
   var id = bodys.id;
-  delete bodys['method'];
+  delete bodys.method;
   var params =  bodys.params;
   var body = {
     id: ++id,
     result: params
   };
-  console.log(body);
-  res.send(body);
+  console.log(JSON.stringify(bodys));
+  res.send(bodys);
 });

@@ -29,6 +29,8 @@
             ;
 
         function render(data) {
+          var bodys = data.params;
+          delete bodys['method'];
           $output.append('<div>Ok [' + data.id + ']' + JSON.stringify(data) + '</div>');
         }
 
@@ -54,7 +56,6 @@
               id: ++id,
               params: JSON.parse(params)
             };
-
             $.ajax({ type: 'POST',
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json',
