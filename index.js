@@ -30,6 +30,6 @@ app.post('/bar', function(req, res) {
     id: ++id,
     result: params
   };
-  console.log(JSON.stringify(bodys));
-  res.send(bodys);
+  console.log(JSON.stringify(body));
+  res.send(body);
 });
